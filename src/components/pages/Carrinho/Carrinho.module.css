@@ -1,0 +1,15 @@
+body{
+    background-image: none;
+}
+
+.titulo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    box-shadow: 1px 1px 10px #000;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+}

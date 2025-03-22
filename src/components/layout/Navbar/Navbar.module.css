@@ -1,0 +1,75 @@
+/* Navbar */
+.navbar {
+    background-color: #FFFF;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 10; /* Garante que a navbar fique acima de outros elementos */
+    background-color: #931a30;
+    border-radius: 20px;
+    padding-right: 10vh;
+}
+
+.navbar img {
+    height: 3rem;
+    max-width: 100%; /* Garante que o logo não ultrapasse a largura disponível */
+}
+
+.navbar button {
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #FFFF;
+    text-decoration: none;
+    margin: 0 1rem; /* Controla espaçamento entre botões */
+    white-space: nowrap; /* Evita quebra de texto */
+    border-radius: 15px;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;   
+
+}
+
+.navbar .home{
+    background-color: #FFFF;
+    color: black;
+    border-radius: 15px;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.navbar button:hover{
+    color: #FFFF;
+    background-color: black; 
+}
+
+
+.centro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5vh;
+}
+
+.logo{
+    width: 20vh;
+}
+
+.carrinho{
+    background-color: #931a30;
+    border-radius: 5vh;
+    padding: 2.5vh;
+}
+
+.carrinho:hover{
+    background-color: #000;
+    cursor: pointer;
+}

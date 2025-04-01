@@ -5,6 +5,7 @@ import Ave from './components/pages/Ave'
 import Suino from './components/pages/Suino'
 import Pescado from './components/pages/Pescado'
 import Carrinho from "./components/pages/Carrinho";
+import BackgroundManager from "./components/BackgroundManager";
 
 function App() {
 

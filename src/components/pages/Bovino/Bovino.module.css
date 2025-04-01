@@ -92,3 +92,8 @@
         background-color: #99002E;
     }
 }
+.productImage {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}

@@ -1,6 +1,6 @@
 .body{
     background-size: cover;
-    background-image: url("/src/assets/pescadoBackground.png");
+    background-image: url("/src/assets/bovinoBackground.png");
 }
 
 .container {
@@ -44,35 +44,35 @@
         color: #FFF;
     }
 
-  
+
 }
 
 .preco{
     margin-top: 100px;
-    
+
     .pricecontainer {
         display: flex;
         align-items: baseline;
         justify-content: center;
         gap: 10px;
     }
-    
+
     .pricelabel {
         font-size: 12px;
         color: #a00;
     }
-    
+
     .price {
         font-size: 30px;
         font-weight: bold;
         color: #a00;
     }
-    
+
     .unit {
         font-size: 13px;
         color: #a00;
     }
-    
+
     .addbtn {
         background-color: #a00;
         color: white;
@@ -91,4 +91,9 @@
     .addbtn:hover {
         background-color: #99002E;
     }
+}
+.productImage {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
 }

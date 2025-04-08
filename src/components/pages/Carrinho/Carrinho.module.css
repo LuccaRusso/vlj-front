@@ -1,6 +1,7 @@
 .body{
     background-image: url("/src/assets/bovinoBackground.png");
     background-size: cover;
+    height: 700px; 
 }
 
 .titulo{
@@ -10,8 +11,35 @@
 }
 
 .container{
+    margin-left: 300px;
     box-shadow: 1px 1px 10px #000;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #99002E;
     padding: 20px;
+    width: 900px;
+    height: 500px;
+}
+
+.produto{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fff;
+    border-radius: 10px;
+}    
+
+.quantidade{
+    display: flex;
+}
+
+.qtd{
+    background-color: #FF004C;
+}
+
+.add{
+    border-radius: 100px;
+    padding: 5px 10px;
+    background-color: #FF004C;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }

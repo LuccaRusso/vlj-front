@@ -10,14 +10,19 @@ function Carrinho() {
                 <img src={logoVermelha} />
                 <div className={styles.container}>
                     <div className={styles.titulo}>
-                        <h1>Comprar</h1>
+                        <h1>Carrinho</h1>
                         <img src={carrinhoPreto} />
                     </div>
-                    <form>
-                        <input />
-                        <input />
-                        <input />
-                    </form>
+                    <div className={styles.produto}>
+                        <div>
+                            <h2>Filé Mignon</h2>
+                            <p>0,5kg</p>
+                        </div>
+                        <div className={styles.quantidade}>
+                            <h1 className={styles.qtd}>1</h1>
+                            <button className={styles.add}>+</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

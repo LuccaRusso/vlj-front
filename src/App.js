@@ -5,7 +5,7 @@ import Ave from './components/pages/Ave'
 import Suino from './components/pages/Suino'
 import Pescado from './components/pages/Pescado'
 import Carrinho from "./components/pages/Carrinho";
-import BackgroundManager from "./components/BackgroundManager";
+import Cadastro from "./components/pages/Cadastro";
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
         <Route path="/suinos" element={<Suino/>}></Route>
         <Route path="/pescados" element={<Pescado/>}></Route>
         <Route path="/carrinho" element={<Carrinho/>}></Route>
+        <Route path="/cadastro" element={<Cadastro/>}></Route>
       </Routes>
     </Router>
   )

@@ -1,4 +1,4 @@
-.slider {
+.deslizante {
     margin: 0 auto;
     width: 100%;
     max-width: 850px;
@@ -8,29 +8,29 @@
     border-radius: 10px;
 }
 
-.slides {
+.deslizamentos {
     width: 400%;
     height: 100%;
     display: flex;
 }
 
-.slides input {
+.deslizamentos input {
     display: none;
 }
 
-.slide {
+.deslizamento {
     width: 25%;
     position: relative;
     transition: 2s;
 }
 
-.slide img {
+.deslizamento img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.manualnavigation {
+.navegacaoManual {
     position: absolute;
     width: 100%;
     max-width: 800px;
@@ -39,7 +39,7 @@
     justify-content: center;
 }
 
-.manualbtn {
+.botaoManual {
     border: 2px solid #fff;
     padding: 5px;
     border-radius: 10px;
@@ -47,31 +47,31 @@
     transition: 1s;
 }
 
-.manualbtn:not(:last-child) {
+.botaoManual:not(:last-child) {
     margin-right: 40px;
 }
 
-.manualbtn:hover {
+.botaoManual:hover {
     background: #fff;
 }
 
-#radio1:checked ~ .first {
+#radio1:checked ~ .primeira {
     margin-left: 0;
 }
 
-#radio2:checked ~ .first {
+#radio2:checked ~ .primeira {
     margin-left: -25%;
 }
 
-#radio3:checked ~ .first {    
+#radio3:checked ~ .primeira {    
     margin-left: -50%;
 }
 
-#radio4:checked ~ .first {    
+#radio4:checked ~ .primeira {    
     margin-left: -75%;
 }
 
-.navigationauto {
+.navegacaoAutomatica {
     position: absolute;
     width: 100%;
     max-width: 800px;
@@ -80,7 +80,7 @@
     justify-content: center;
 }
 
-.navigationauto div {
+.navegacaoAutomatica div {
     border: 2px solid #20a6ff;
     padding: 5px;
     border-radius: 10px;
@@ -88,34 +88,37 @@
     transition: 1s;
 }
 
-.navigationauto div:not(:last-child) {
+.navegacaoAutomatica div:not(:last-child) {
     margin-right: 40px;
 }
 
-#radio1:checked ~ .navigationauto .autobtn1 {
+#radio1:checked ~ .navegacaoAutomatica .botaoAuto1 {
     background: #fff;
 }
 
-#radio2:checked ~ .navigationauto .autobtn2 {
+#radio2:checked ~ .navegacaoAutomatica .botaoAuto2 {
     background: #fff;
 }
 
-#radio3:checked ~ .navigationauto .autobtn3 {
+#radio3:checked ~ .navegacaoAutomatica .botaoAuto3 {
     background: #fff;
 }
 
-#radio4:checked ~ .navigationauto .autobtn4 {
+#radio4:checked ~ .navegacaoAutomatica .botaoAuto4 {
     background: #fff;
 }
 
 @media (max-width: 600px) {
-    .manualbtn:not(:last-child), .navigationauto div:not(:last-child) {
+    .botaoManual:not(:last-child),
+    .navegacaoAutomatica div:not(:last-child) {
         margin-right: 20px;
     }
-    .navigationauto {
+
+    .navegacaoAutomatica {
         bottom: 30px;
     }
-    .manualnavigation {
+
+    .navegacaoManual {
         bottom: 5px;
     }
 }

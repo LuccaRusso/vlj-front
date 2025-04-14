@@ -1,68 +1,60 @@
-import { useState, useEffect } from "react";
-import styles from "./Slider.module.css";
+import { useState, useEffect } from "react"
+import estilos from "./Slider.module.css"
+import imagemBovino from "./../../../assets/bovino_slider.png"
+import imagemSuino from "./../../../assets/suino_slider.png"
+import imagemAve from "./../../../assets/ave_slider.png"
+import imagemPescado from "./../../../assets/pescado_slider.png"
 
 function Slider() {
-  const [count, setCount] = useState(1);
+  const [contador, definirContador] = useState(1)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => (prevCount >= 4 ? 1 : prevCount + 1));
-    }, 5000);
+    const intervalo = setInterval(() => {
+      definirContador((valorAnterior) => (valorAnterior >= 4 ? 1 : valorAnterior + 1))
+    }, 5000)
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(intervalo)
+  }, [])
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.slides}>
-        {[1, 2, 3, 4].map((num) => (
+    <div className={estilos.deslizante}>
+      <div className={estilos.deslizamentos}>
+        {[1, 2, 3, 4].map((numero) => (
           <input
-            key={num}
+            key={numero}
             type="radio"
-            name="radio-btn"
-            id={`radio${num}`}
-            checked={count === num}
+            name="botao-radio"
+            id={`radio${numero}`}
+            checked={contador === numero}
             readOnly
           />
         ))}
 
-        <div className={styles.slide} style={{ marginLeft: `-${(count - 1) * 25}%` }}>
-          <img
-            src="https://plus.unsplash.com/premium_photo-1740997621838-faaec5fa62d3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Imagem 1"
-          />
+        <div className={estilos.deslizamento} style={{ marginLeft: `-${(contador - 1) * 25}%` }}>
+          <img src={imagemBovino} alt="Imagem 1" />
         </div>
-        <div className={styles.slide}>
-          <img
-            src="https://images.unsplash.com/photo-1742268351241-b1b2ccae70c5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Imagem 2"
-          />
+        <div className={estilos.deslizamento}>
+          <img src={imagemSuino} alt="Imagem 2" />
         </div>
-        <div className={styles.slide}>
-          <img
-            src="https://images.unsplash.com/photo-1741936428950-3f66f0a69320?q=80&w=2027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Imagem 3"
-          />
+        <div className={estilos.deslizamento}>
+          <img src={imagemAve} alt="Imagem 3" />
         </div>
-        <div className={styles.slide}>
-          <img
-            src="https://images.unsplash.com/photo-1742268351428-ba1366f7dae3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Imagem 4"
-          />
+        <div className={estilos.deslizamento}>
+          <img src={imagemPescado} alt="Imagem 4" />
         </div>
       </div>
 
-      <div className={styles.navigationmanual}>
-        {[1, 2, 3, 4].map((num) => (
+      <div className={estilos.navegacaoManual}>
+        {[1, 2, 3, 4].map((numero) => (
           <label
-            key={num}
-            className={styles.manualbtn}
-            onClick={() => setCount(num)}
+            key={numero}
+            className={estilos.botaoManual}
+            onClick={() => definirContador(numero)}
           ></label>
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default Slider;
+export default Slider

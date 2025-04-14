@@ -6,6 +6,7 @@ import Suino from './components/pages/Suino'
 import Pescado from './components/pages/Pescado'
 import Carrinho from "./components/pages/Carrinho";
 import Cadastro from "./components/pages/Cadastro";
+import CompraSucesso from "./components/pages/ComprarSucesso";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/pescados" element={<Pescado/>}></Route>
         <Route path="/carrinho" element={<Carrinho/>}></Route>
         <Route path="/cadastro" element={<Cadastro/>}></Route>
+        <Route path="/sucesso" element={<CompraSucesso />} />
       </Routes>
     </Router>
   )

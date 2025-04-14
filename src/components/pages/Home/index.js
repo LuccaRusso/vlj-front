@@ -1,122 +1,54 @@
-import styles from "./Home.module.css"
-import Footer from '../../layout/Footer'
-import Slider from "../../layout/Slider"
-import Navbar from "../../layout/Navbar"
+  import styles from "./Home.module.css"
+  import Footer from '../../layout/Footer'
+  import Slider from "../../layout/Slider"
+  import Navbar from "../../layout/Navbar"
+  import frango from "../../../assets/peito_frango.webp"
+  import file from "../../../assets/contra_file.jpg"
+  import costela from "../../../assets/costelinha-suina.png"
+  import pescado from "../../../assets/file-merluza.jpg"
 
-function Home() {
+  function Home() {
+    return (
+      <>
+        <div className={styles.body}>
+          <Navbar />
+          <div className={styles.container}>
+            <Slider />
+            <div className={styles.produtos}>
+              {/* Carne Bovina */}
+              <div className={styles.produto}>
+                <img src={file} alt="Contra Filé" className={styles.produtoImg} />
+                <h3>Bovinos</h3>
+                <button className={styles.addbtn} onClick={() => window.location.href = '/bovinos'}>Comprar</button>
+              </div>
 
 
-  return (
-    <>
-      <div className={styles.body}>
-        <Navbar/>
-        <div className={styles.container}>
-          <Slider />
-          <div className={styles.produtos}>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
+              {/* Frango */}
+              <div className={styles.produto}>
+              <img src={frango} alt="Peito de frango" className={styles.produtoImg} />
+                <h3>Aves</h3>
+                <button className={styles.addbtn} onClick={() => window.location.href = '/aves'}>Comprar</button>
               </div>
-            </div>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
+
+              {/* Carne Suína */}
+              <div className={styles.produto}>
+              <img src={costela} alt="Constelinha de porco" className={styles.produtoImg} />
+                <h3>Suinos</h3>
+                <button className={styles.addbtn} onclick={() => window.location.href = '/suinos'}>Comprar</button>
               </div>
-            </div>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
-              </div>
-            </div>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
-              </div>
-            </div>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
-              </div>
-            </div>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
-              </div>
-            </div>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
-              </div>
-            </div>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
-              </div>
-            </div>
-            <div className={styles.produto}>
-              <h3>Filé Mignon</h3>
-              <div className={styles.preco}>
-                <div className={styles.pricelabel}>Preço:</div>
-                <div className={styles.pricecontainer}>
-                  <div className={styles.price}>R$59,99</div>
-                  <div class={styles.unit}>1Kg/Unidade</div>
-                </div>
-                <button className={styles.addbtn}>Adicionar</button>
+
+              {/* Pescados */}
+              <div className={styles.produto}>
+              <img src={pescado} alt="Filé de Merluza" className={styles.produtoImg} />
+                <h3>Pescados</h3>
+                <button className={styles.addbtn} onClick={() => window.location.href = '/pescados'}>Comprar</button>
               </div>
             </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </>
-  )
-}
-export default Home
+      </>
+    )
+  }
+
+  export default Home

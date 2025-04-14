@@ -1,77 +1,101 @@
-import { useState, useEffect } from 'react';
-import Navbar from "../../layout/Navbar"
-import Footer from "../../layout/Footer"
+import { useState, useEffect } from 'react'
+import BarraNavegacao from "../../layout/Navbar"
+import Rodape from "../../layout/Footer"
 import Slider from '../../layout/Slider'
-import styles from './Bovino.module.css'
+import estilos from './Bovino.module.css'
+import { useNavigate } from "react-router-dom"
 
 function Bovino() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [produtos, definirProdutos] = useState([])
+  const [carregando, definirCarregando] = useState(true)
+  const [erro, definirErro] = useState(null)
+  const navegar = useNavigate()
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const buscarProdutos = async () => {
       try {
-        const response = await fetch('https://vlj-api.onrender.com/product/get/category/1');
-        if (!response.ok) {
-          throw new Error('Erro ao carregar produtos');
+        const resposta = await fetch('https://vlj-api.onrender.com/product/get/category/1')
+        if (!resposta.ok) {
+          throw new Error('Erro ao carregar produtos')
         }
-        const data = await response.json();
-        setProducts(data);
+        const dados = await resposta.json()
+        definirProdutos(dados)
       } catch (err) {
-        setError(err.message);
+        definirErro(err.message)
       } finally {
-        setLoading(false);
+        definirCarregando(false)
       }
-    };
+    }
 
-    fetchProducts();
-  }, []);
+    buscarProdutos()
+  }, [])
 
-  const formatPrice = (priceInCents) => {
-    return (priceInCents / 100).toLocaleString('pt-BR', {
+  const formatarPreco = (precoEmCentavos) => {
+    return (precoEmCentavos / 100).toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL'
-    });
-  };
+    })
+  }
+
+  const adicionarAoCarrinho = (produto) => {
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || []
+    const produtoExistente = carrinho.find(item => item.id === produto.id)
+
+    if (produtoExistente) {
+      produtoExistente.quantity += 1
+    } else {
+      carrinho.push({ ...produto, quantity: 1 })
+    }
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho))
+  }
+
+  const irParaCarrinho = () => {
+    navegar("/carrinho")
+  }
 
   return (
-      <div className={styles.body}>
-        <Navbar />
-        <div className={styles.container}>
-          <Slider />
-          {loading ? (
-              <div>Carregando...</div>
-          ) : error ? (
-              <div>Erro: {error}</div>
-          ) : (
-              <div className={styles.produtos}>
-                {products.map((product) => (
-                    <div key={product.id} className={styles.produto}>
-                      <h3>{product.name}</h3>
-                      {product.url_image && (
-                          <img
-                              src={product.url_image}
-                              alt={product.name}
-                              className={styles.productImage}
-                          />
-                      )}
-                      <div className={styles.preco}>
-                        <div className={styles.pricelabel}>Preço:</div>
-                        <div className={styles.pricecontainer}>
-                          <div className={styles.price}>{formatPrice(product.price_in_cents)}</div>
-                          <div className={styles.unit}>1Kg/Unidade</div>
-                        </div>
-                        <button className={styles.addbtn}>Adicionar</button>
-                      </div>
-                    </div>
-                ))}
+    <div className={estilos.corpo}>
+      <BarraNavegacao />
+      <div className={estilos.container}>
+        <Slider />
+        {carregando ? (
+          <div>Carregando...</div>
+        ) : erro ? (
+          <div>Erro: {erro}</div>
+        ) : (
+          <div className={estilos.listaProdutos}>
+            {produtos.map((produto) => (
+              <div key={produto.id} className={estilos.produto}>
+                {produto.url_image && (
+                  <img
+                    src={produto.url_image}
+                    alt={produto.name}
+                    className={estilos.imagemProduto}
+                  />
+                )}
+                <h3>{produto.name}</h3>
+                <div className={estilos.preco}>
+                  <div className={estilos.rotuloPreco}>Preço:</div>
+                  <div className={estilos.containerPreco}>
+                    <div className={estilos.valor}>{formatarPreco(produto.price_in_cents)}</div>
+                    <div className={estilos.unidade}>1Kg/Unidade</div>
+                  </div>
+                  <button 
+                    className={estilos.botaoComprar} 
+                    onClick={() => adicionarAoCarrinho(produto)}
+                  >
+                    Adicionar
+                  </button>
+                </div>
               </div>
-          )}
-        </div>
-        <Footer />
+            ))}
+          </div>
+        )}
       </div>
-  );
+      <Rodape />
+    </div>
+  )
 }
 
-export default Bovino;
+export default Bovino

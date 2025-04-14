@@ -1,99 +1,100 @@
-.body{
-    background-size: cover;
-    background-image: url("/src/assets/bovinoBackground.png");
+.corpo {
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.slider {
-    margin-top: 100px;
-}
-
-.produtos {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    background-color: #99002E;
-    display: flex;
-    width: 850px;
-    height: 850px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
+.listaProdutos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 100px;
 }
 
 .produto {
-    background-image: url("/src/assets/carneBackground.png");
-    width: 250px;
-    height: 250px;
-    border-radius: 20px;
-
-    h3 {
-        background-image: url("/src/assets/titleBackground.png");
-        width: 172px;
-        height: 35px;
-        text-align: center;
-        color: #FFF;
-    }
-
-
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
 }
 
-.preco{
-    margin-top: 100px;
-
-    .pricecontainer {
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .pricelabel {
-        font-size: 12px;
-        color: #a00;
-    }
-
-    .price {
-        font-size: 30px;
-        font-weight: bold;
-        color: #a00;
-    }
-
-    .unit {
-        font-size: 13px;
-        color: #a00;
-    }
-
-    .addbtn {
-        background-color: #a00;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 10px;
-        text-decoration: none;
-        display: inline-block;
-        margin-top: 15px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        margin-left: 80px;
-    }
-
-    .addbtn:hover {
-        background-color: #99002E;
-    }
+.produto:hover {
+  transform: translateY(-5px);
 }
-.productImage {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+
+.produto h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+  min-height: 50px;
+}
+
+.imagemProduto {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.preco {
+  margin-top: auto;
+}
+
+.rotuloPreco {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.containerPreco {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.valor {
+  font-size: 22px;
+  font-weight: bold;
+  color: #99002E;
+}
+
+.unidade {
+  font-size: 14px;
+  color: #555;
+}
+
+.botaoComprar {
+  background-color: #99002E;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botaoComprar:hover {
+  background-color: #720425;
+}
+
+.botaoCarrinho {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
 }

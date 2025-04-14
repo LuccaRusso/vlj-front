@@ -1,32 +1,21 @@
-
-.navbar {
+.barraNavegacao {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
     background-color: #931a30;
 }
 
-.navbar button {
+.barraNavegacao button {
     border: none;
     cursor: pointer;
     background: none;
-    font-size: 1.5rem;
-    color: #FFFF;
+    font-size: 1.2rem;
+    color: #fff;
     text-decoration: none;
-    margin: 0 1rem;
-    /* Controla espaçamento entre botões */
-    white-space: nowrap;
-    /* Evita quebra de texto */
+    padding: 10px 20px;
     border-radius: 15px;
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-
-}
-
-
-.home {
-    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
 }
 
 .boi {
@@ -37,4 +26,28 @@
 .carrinho {
     width: 30px;
     height: 30px;
+}
+
+.ativo {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+}
+
+.botaoCadastro {
+    background-color: #fff;
+    color: #931a30;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botaoCadastro:hover {
+    background-color: #e6e6e6;
+}
+
+.usuario {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-right: 10px;
 }

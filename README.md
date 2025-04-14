@@ -9,6 +9,7 @@ Este projeto é uma aplicação de vendas online para uma empresa fictícia cham
 - **React** - Biblioteca JavaScript para construção da interface de usuário.
 - **React Router** - Biblioteca para navegação entre diferentes páginas da aplicação.
 - **CSS** - Para o estilo visual da aplicação.
+- **API** - Para inserir valores no banco, como usuário e produtos
 
 ## Funcionalidades
 

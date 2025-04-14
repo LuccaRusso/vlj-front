@@ -1,74 +1,101 @@
-<<<<<<< HEAD
-# vlj-front
-=======
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Projeto VLJ Carnes
 
-## Available Scripts
+Este projeto é uma aplicação de vendas online para uma empresa fictícia chamada **VLJ Carnes**, especializada na comercialização de carnes. O site permite que os clientes naveguem entre diferentes categorias de carnes, adicionem produtos ao carrinho, se cadastrem e realizem compras.
 
-In the project directory, you can run:
+## Tecnologias Utilizadas
 
-### `npm start`
+- **React** - Biblioteca JavaScript para construção da interface de usuário.
+- **React Router** - Biblioteca para navegação entre diferentes páginas da aplicação.
+- **CSS** - Para o estilo visual da aplicação.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Funcionalidades
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Páginas Principais
+1. **Home**: Página inicial com um slider de promoções e links para diferentes tipos de carnes.
+2. **Bovinos**: Exibe carnes bovinas com opção de adicionar ao carrinho.
+3. **Aves**: Exibe carnes de aves, como frango, com opção de compra.
+4. **Suínos**: Exibe carnes suínas, como costela de porco.
+5. **Pescados**: Exibe pescados, como filé de merluza.
+6. **Carrinho**: Página onde os usuários podem visualizar os itens adicionados ao carrinho, alterar quantidades e remover itens.
+7. **Cadastro**: Página para o cadastro de novos usuários, onde são solicitados dados como nome, e-mail, senha e endereço.
+8. **Compra Sucesso**: Página de confirmação de compra após a finalização do pedido.
 
-### `npm test`
+### Recursos
+- **Carrinho de Compras**: Os itens podem ser adicionados, removidos e a quantidade pode ser alterada diretamente no carrinho.
+- **Cadastro de Usuário**: Permite que os clientes se cadastrem para realizar compras, salvando seus dados no localStorage.
+- **Roteamento Dinâmico**: Uso do `react-router-dom` para navegação entre as diferentes páginas da aplicação.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Como Rodar o Projeto
 
-### `npm run build`
+### Requisitos
+- **Node.js** - Certifique-se de que o Node.js está instalado na sua máquina.
+- **npm** ou **yarn** - Gerenciadores de pacotes para instalar as dependências do projeto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Passos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/vlj-carnes.git
+   ```
+2. Navegue até a pasta do projeto:
+   ```bash
+   cd vlj-carnes
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm start
+   # ou
+   yarn start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. A aplicação estará disponível no seu navegador em `http://localhost:3000`.
 
-### `npm run eject`
+## Estrutura do Projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```plaintext
+/src
+|-- components
+|   |-- pages
+|   |   |-- Home.js
+|   |   |-- Bovino.js
+|   |   |-- Ave.js
+|   |   |-- Suino.js
+|   |   |-- Pescado.js
+|   |   |-- Carrinho.js
+|   |   |-- Cadastro.js
+|   |   |-- CompraSucesso.js
+|-- layout
+|   |-- Navbar.js
+|   |-- Footer.js
+|   |-- Slider.js
+|-- assets
+|   |-- peito_frango.webp
+|   |-- contra_file.jpg
+|   |-- costelinha-suina.png
+|   |-- file-merluza.jpg
+|-- App.js
+|-- index.js
+|-- styles
+|   |-- Home.module.css
+|   |-- Carrinho.module.css
+|   |-- Cadastro.module.css
+|   |-- ...
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Considerações Finais
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- O projeto utiliza um banco SQL para salvar os dados do carrinho e do usuário.
+- A aplicação simula o processo de compra, mas a integração real com um backend para processamento de pagamento e cadastro do usuário.
+- O estilo visual é responsivo, adaptando-se a diferentes tamanhos de tela.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> react
+Esse README fornece uma descrição clara do funcionamento do seu projeto, desde a instalação até a estrutura do código. Ele também cobre as funcionalidades essenciais da aplicação e como rodá-la localmente.
